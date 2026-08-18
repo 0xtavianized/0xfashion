@@ -56,7 +56,6 @@ trait ProfileValidationRules
             'required',
             'string',
             'max:20',
-            Rule::unique(User::class)->ignore(request()->user()->id)
         ];
     }
 }

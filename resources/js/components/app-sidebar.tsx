@@ -1,13 +1,14 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { LayoutGrid, UserRoundCheck, UsersIcon, UserCog } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
-import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
+import { NavUsers } from '@/components/nav-users';
 import {
     Sidebar,
     SidebarContent,
     SidebarFooter,
+    SidebarGroup,
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
@@ -23,17 +24,21 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
 ];
-
-const footerNavItems: NavItem[] = [
+const usersNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: FolderGit2,
+        title: 'Admins List',
+        href: '/admin/admins',
+        icon: UserRoundCheck,
     },
     {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
+        title: 'Customers List',
+        href: '/admin/customers',
+        icon: UsersIcon,
+    },
+    {
+        title: 'Roles List',
+        href: '/admin/roles',
+        icon: UserCog,
     },
 ];
 
@@ -54,10 +59,10 @@ export function AppSidebar() {
 
             <SidebarContent>
                 <NavMain items={mainNavItems} />
+                <NavUsers items={usersNavItems} />
             </SidebarContent>
 
             <SidebarFooter>
-                <NavFooter items={footerNavItems} className="mt-auto" />
                 <NavUser />
             </SidebarFooter>
         </Sidebar>
