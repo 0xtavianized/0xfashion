@@ -76,6 +76,25 @@ export default function Profile() {
                                     message={errors.email}
                                 />
                             </div>
+                            <div className="grid gap-2">
+                                <Label htmlFor="phone">Phone Number</Label>
+
+                                <Input
+                                    id="phone"
+                                    type="number"
+                                    className="mt-1 block w-full"
+                                    defaultValue={auth.user.phone}
+                                    name="phone"
+                                    required
+                                    autoComplete="username"
+                                    placeholder="08xxxxxxxx"
+                                />
+
+                                <InputError
+                                    className="mt-2"
+                                    message={errors.phone}
+                                />
+                            </div>
 
                             <div className="flex items-center gap-4">
                                 <Button
